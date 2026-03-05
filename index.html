@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Concours MP - Analyseur d'Occurrences</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">OPÉRATIONNEL· 5/2ottothewise</p>
+        <h1>Analyse des thèmes récurrents en Maths et Physique en MP</h1>
+        <p>
+      Classement d’exercices d’oral MP issus de la base BEOS par ordre d’apparition du mot-clé associé. 
+      Des erreurs peuvent subsister.
+        </p>
+        <p class="source-note">
+          
+          Source: base BEOS (https://beos.prepas.org/), extraite le 5 mars 2026.
+        </p>
+      </header>
+
+      <section class="controls">
+        <div class="control-block">
+          <div class="control-head">
+            <h2>Banques</h2>
+            <button id="selectAllBanques" class="text-btn">Tout cocher</button>
+          </div>
+          <div id="banqueFilters" class="chip-grid"></div>
+        </div>
+
+        <div class="control-block">
+          <div class="control-head">
+            <h2>Années incluses</h2>
+            <div class="actions-inline">
+              <button id="selectAllYears" class="text-btn">Tout</button>
+              <button id="clearYears" class="text-btn">Aucun</button>
+            </div>
+          </div>
+          <div id="yearFilters" class="year-grid"></div>
+        </div>
+
+        <div class="control-block">
+          <div class="control-head">
+            <h2>Matière (choix unique)</h2>
+          </div>
+          <div id="subjectFilters" class="chip-grid"></div>
+        </div>
+
+        <div class="control-block">
+          <div class="control-head">
+            <h2>Type(s) de sujet(s)</h2>
+            <button id="selectAllTypes" class="text-btn">Tout cocher</button>
+          </div>
+          <div id="typeFilters" class="chip-grid"></div>
+        </div>
+
+        <div class="control-block compact">
+          <label for="searchTheme">Rechercher un thème</label>
+          <input
+            id="searchTheme"
+            type="search"
+            placeholder="ex: diagonalisation, thermodynamique, RLC..."
+          />
+        </div>
+      </section>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Thème (question fréquente)</th>
+              <th>Matière</th>
+              <th>Nb d'apparitions</th>
+              <th>Banques</th>
+              <th>Années</th>
+              <th>Type(s)</th>
+              <th>Où c'est apparu</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

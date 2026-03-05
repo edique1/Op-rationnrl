@@ -1,0 +1,275 @@
+:root {
+  --bg-top: #1d4f91;
+  --bg-bottom: #0b1f45;
+  --ink: #102a43;
+  --ink-soft: #334e68;
+  --card: rgba(255, 255, 255, 0.92);
+  --accent: #0f766e;
+  --accent-2: #ef8354;
+  --line: rgba(16, 42, 67, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(140deg, var(--bg-top), var(--bg-bottom));
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 15%, rgba(120, 189, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 90% 5%, rgba(74, 144, 226, 0.2), transparent 38%);
+  pointer-events: none;
+}
+
+.app-shell {
+  position: relative;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.hero {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  box-shadow: 0 10px 28px rgba(16, 42, 67, 0.08);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.74rem;
+}
+
+h1 {
+  margin: 0.35rem 0 0.5rem;
+  line-height: 1.14;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.hero .source-note {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+}
+
+.controls {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.control-block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.8rem;
+}
+
+.control-block.compact {
+  grid-column: span 2;
+}
+
+.control-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+}
+
+.actions-inline {
+  display: flex;
+  gap: 0.45rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.text-btn {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chip-grid,
+.year-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-chip,
+.year-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.9rem;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.filter-chip input,
+.year-chip input {
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.42rem;
+}
+
+input[type="search"] {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+}
+
+.stats {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 0.65rem;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.72rem 0.8rem;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+.stat-value {
+  font-size: 1.35rem;
+  margin-top: 0.2rem;
+  font-weight: 800;
+}
+
+.table-wrap {
+  margin-top: 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.2rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  padding: 0.78rem 0.55rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+tbody td {
+  padding: 0.68rem 0.55rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.rank {
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.count-pill {
+  display: inline-block;
+  background: #0f766e16;
+  color: var(--accent);
+  padding: 0.15rem 0.48rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.12rem 0.45rem;
+  font-size: 0.78rem;
+  background: #fff;
+}
+
+details {
+  max-width: 340px;
+}
+
+details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+details ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1rem;
+}
+
+.empty {
+  color: #7a8da3;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .control-block.compact {
+    grid-column: span 1;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
